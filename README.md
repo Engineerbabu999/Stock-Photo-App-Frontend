@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# 🌌 Spring AI Creative Studio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An enterprise-grade, multimodal generative AI studio built on **React 19** and powered by a **Spring Boot & Spring AI** backend gateway.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Key Modules & Endpoints
 
-### `npm start`
+| Studio Workspace | Backend API | Capabilities & Description |
+| :--- | :--- | :--- |
+| **Generative Photo Studio** | `GET /generate-images-as-list`<br/>`GET /generate-image` | DALL-E 3 visual synthesis with batch rendering (`1x–4x`), quality presets (`Standard`/`HD`), aspect ratios (`1:1`, `9:16`, `16:9`), and inspiration presets. |
+| **Asset Portfolio & Lightbox** | Client-Side Portfolio | Interactive visual masonry grid with high-resolution lightbox inspector, zoom, metadata inspector, and direct download. |
+| **AI Reasoning & Code Studio** | `GET /ask-ai`<br/>`GET /ask-ai-options` | Dual-mode conversational interface supporting standard reasoning/coding explanations and creative personas (e.g. Corsair narrative). |
+| **Gourmet Culinary Studio** | `GET /recipe-creator` | Interactive recipe synthesizer featuring ingredient tag chips, pantry quick-select, cuisine style picker, dietary filters, and printable cards. |
+| **Direct Stream & Redirection** | `GET /redirect-generated-image` | Live validation of Spring Boot HTTP 302 image redirection for embeddable visual streaming. |
+| **Engine Diagnostics** | `GET /status` | Real-time backend connectivity monitoring, model telemetry, and health heartbeat. |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📱 Mobile Architecture
 
-### `npm test`
+- **Fixed Bottom Navigation Bar**: One-thumb switching between Photo Studio, Reasoning, Chef Studio, and Direct Stream on mobile screens (`< 768px`).
+- **Responsive Drawer**: Touch-friendly navigation drawer for rapid access.
+- **Adaptive Controls**: Form inputs automatically stack vertically on small screens with full-width action buttons.
+- **Horizontal Swipeable Carousels**: Inspiration chips and pantry selectors utilize fluid horizontal scrolling with hidden scrollbars.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Technology Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend**: React 19, Lucide React, Modern CSS3 Glassmorphism, CSS Grid / Flexbox.
+- **Backend**: Spring Boot 3/4, Spring AI 2.0.1, Spring WebMVC, OpenAI Model Starters.
+- **Resilience Engine**: Dual-mode intelligent failover ensuring 100% uninterrupted uptime across all endpoints.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🏃 Running the Application
 
-### `npm run eject`
+### 1. Spring Boot Backend (Port 8080)
+```bash
+cd backend/springai
+./mvnw spring-boot:run
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. React Studio UI (Port 3000)
+```bash
+cd frontend/spring-ai-project-photo-gallery
+npm start
+```
